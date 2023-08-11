@@ -4,7 +4,7 @@
 
 package object UScleaner { 
     def cleanCountry = (country: String) => {
-        val allUSA = seq("US", "USa", "USA", "United States", "United States of America") 
+        val allUSA = Seq("US", "USa", "USA", "United States", "United States of America") 
         if (allUSA.contains(country)) {
             "USA"
         }
