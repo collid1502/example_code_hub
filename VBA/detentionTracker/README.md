@@ -4,5 +4,6 @@ Created a simple excel tool for a school teacher friend, who wanted a way to cre
 
 Here's a picture:
 
-![alt text](VBA/detentionTracker/images/DetTrackerImg.jpg)
+![alt text](/VBA/detentionTracker/images/DetTrackerImg.jpg)
 
+You can find the subsequent modules & userForms created in this project within this repo
