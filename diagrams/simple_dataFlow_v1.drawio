@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-27T18:12:01.578Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="0BHrNc_C_1VEEpjxhjQ-" version="22.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-27T18:15:01.798Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="mdk72o_OMH2hS5mDa0ZB" version="22.1.4" type="github">
   <diagram name="Page-1" id="Eh_BCX8K2EOpvghZnZSi">
     <mxGraphModel dx="2049" dy="1071" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000305" math="0" shadow="0">
       <root>
@@ -93,6 +93,9 @@
               <mxPoint x="810" y="520" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="DgK37lbpcqMrue05Y1sJ-33" value="&lt;span style=&quot;font-size: 25px;&quot;&gt;&lt;font color=&quot;#cce5ff&quot;&gt;EXAMPLE DATA PATTERN&lt;/font&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=7;fontSize=20;verticalAlign=top;opacity=10;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="13" y="17" width="1140" height="678" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
