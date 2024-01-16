@@ -1,4 +1,4 @@
-# Example Code Hub
+# Example Code Hub Project
 
 **Author** : `Dan Collins`
 
