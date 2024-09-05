@@ -1,3 +1,3 @@
 # Snowflake
 
-to be updated...
+Some code examples covering Snowflake topics
