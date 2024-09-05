@@ -6,3 +6,4 @@ They may come from the same base source, for example, but each has its own data 
 We can design an approach that uses a template python process, driven by metadata, to process each API call in a loop.<br>
 This code base in an example approach.<br>
 
+The idea for this example, is to pull some data from an API, and load it to Snowflake.
