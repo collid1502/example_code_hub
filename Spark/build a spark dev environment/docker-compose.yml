@@ -1,0 +1,83 @@
+# create the development environment for Spark locally via Docker
+# enviroment variables come from `.env` file in same directory
+version: "3.8"
+
+services:
+  # MinIO as the object storage layer (to mimic AWS S3 as it has a compatible API) 
+  minio:
+    image: minio/minio
+    container_name: minio
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - /tmp/minio:/data  # Bind mount to a temporary host directory
+    command: server /data --console-address ":9001" 
+    networks:
+      - datalake-net 
+
+# /tmp/minio:/data: This mounts a temporary directory on the host (/tmp/minio) to the /data directory inside the MinIO container
+# The data will only exist in /tmp/minio on the host while the container is running. Once the container is stopped, 
+# the data will still exist in /tmp, but if you restart the container, it will start with fresh data. You can manually clean 
+# up the /tmp directory as needed, and it's commonly used for temporary files that don't need persistence
+
+  # Spark Master Node 
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    networks:
+      - datalake-net
+
+  # Spark Worker Node 1
+  spark-worker-1:
+    image: bitnami/spark:latest
+    container_name: spark-worker-1
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    networks:
+      - datalake-net
+
+  # Spark Worker Node 2
+  spark-worker-2:
+    image: bitnami/spark:latest
+    container_name: spark-worker-2
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8082:8082"
+    networks:
+      - datalake-net
+
+  # AWS Linux instance (custom image) to replicate an "edge node" for an EMR cluster 
+  aws-linux:
+    image: custom_aws_instance:v1  # Reference your custom image here
+    container_name: edge-node
+    tty: true
+    ports:
+      - "8888:8888"  # Expose Jupyter port
+    volumes:
+      - ./development_area:/development  # Mount local directory to container's workspace
+    networks:
+      - datalake-net
+
+
+# let docker create a network that call containers can access
+networks:
+  datalake-net:
+    driver: bridge
