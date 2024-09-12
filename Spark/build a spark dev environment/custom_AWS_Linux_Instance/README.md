@@ -7,7 +7,7 @@ Use the `Dockerfile` in this directory, to build the custom image for use in the
 steps:
 
 ```
-docker build -t custom_aws_instance:v1 -f .
+docker build -t custom_aws_instance:v1 .
 ``` 
 
 once built, it can be ran in interactive mode with:
