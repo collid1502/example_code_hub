@@ -1,3 +1,5 @@
+#!/bin/bash  
+
 # stop containers without removing them
 # docker-compose stop 
 

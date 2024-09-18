@@ -1,0 +1,11 @@
+.metals
+.vscode
+Docker/airflow/logs
+RemoteDev/AWS_cloud9_old/
+RemoteDev/AWS_cloud9/notes.txt 
+Python/scrathpad.py
+Spark/exploring_PySpark/data/customerMasterExtract.csv
+Spark/exploring_PySpark/data/dummy_txns.csv
+Spark/exploring_PySpark/data/parquet_dummy_txns
+Spark/exploring_PySpark/data/got_delta
+Spark/build a spark dev environment/development_area/.ipynb_checkpoints 

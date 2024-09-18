@@ -1,3 +1,5 @@
+## Create a custom image that will act as the `edge-node` to the Local Spark Cluster
+
 Create a custom image, based on AWS Linux, to ensure we have an "edge node" style machine as part of the Docker network, which can communicate with the Mini Spark cluster we are creating and submit jobs / connect to it.
 
 This image will download all the spark, iceberg & Python dependencies for the tasks we will be developing.
@@ -15,3 +17,7 @@ once built, it can be ran in interactive mode with:
 ```
 docker run -it custom_aws_instance:v1
 ```
+
+This node, can interactively use something like a Jupyter Notebook or Python IDE (VS Code) to write, test & debug Spark code
+
+Note, in this folder I have created a simple `build_image.sh` file to complete the build as needed.
